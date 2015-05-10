@@ -21,9 +21,9 @@ const subscribe = function* (isMentor) {
 
   // Get result
   if (isMentor) {
-    var result = yield mailchimp.subscribe(query.email, query.name)
-  } else {
     var result = yield mailchimp.subscribeAsMenotor(query.email, query.name)
+  } else {
+    var result = yield mailchimp.subscribe(query.email, query.name)
   }
 
   // Set status and body, both are preserved from MailChimp
