@@ -31,9 +31,11 @@ const subscribe = function* (listId, email, name) {
 // And export public functions, all of them needs to be generators
 module.exports = {
   subscribe:          function* (email, name) {
-    yield* subscribe(process.env.NODESCHOOL_LIST_ID, email, name)
+    let result = yield subscribe(process.env.NODESCHOOL_LIST_ID, email, name)
+    return result
   },
   subscribeAsMenotor: function* (email, name) {
-    yeild* subscribe(process.env.NODESCHOOL_MENTOR_LIST_ID, email, name)
+    let result = yield subscribe(process.env.NODESCHOOL_MENTOR_LIST_ID, email, name)
+    return result
   }
 }
