@@ -20,7 +20,7 @@ const subscribe = function* (isMentor) {
   let query = this.request.query
 
   // Get result
-  if (isMentor) {
+  if (isMentor === true) {
     var result = yield mailchimp.subscribeAsMenotor(query.email, query.name)
   } else {
     var result = yield mailchimp.subscribe(query.email, query.name)
