@@ -15,15 +15,17 @@ app.use(cors())
 
 // Subscribe function
 const subscribe = function* (isMentor) {
+
   // Get query string
   let query = this.request.query
+
   // Get result
   if (isMentor) {
-    var result = yield mailchimp.subscribe(query.email, query.name)  
+    var result = yield mailchimp.subscribe(query.email, query.name)
   } else {
     var result = yield mailchimp.subscribeAsMenotor(query.email, query.name)
   }
-  
+
   // Set status and body, both are preserved from MailChimp
   this.status = result.status
   this.body   = result.body

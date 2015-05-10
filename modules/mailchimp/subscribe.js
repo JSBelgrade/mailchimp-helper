@@ -3,7 +3,7 @@
 const request = require('request')
 const generatorify = require('../generatorify/index')
 
-const ApiKey = 'fa6c621566b59fdf712ca59ada1c2bbf-us10'
+const ApiKey = process.env.MAILCHIMP_API_KEY
 
 // Convert request to generator
 let subscribeGenerator = generatorify(request)
@@ -31,10 +31,9 @@ const subscribe = function* (listId, email, name) {
 // And export public functions, all of them needs to be generators
 module.exports = {
   subscribe:          function* (email, name) {
-    let result = yield subscribe('257847b2d9', email, name)
-    return result
+    yield* subscribe(process.env.NODESCHOOL_LIST_ID, email, name)
   },
   subscribeAsMenotor: function* (email, name) {
-    yeild* subscribe('cdeb4a431c', email, name)
+    yeild* subscribe(process.env.NODESCHOOL_MENTOR_LIST_ID, email, name)
   }
 }
