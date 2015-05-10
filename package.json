@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "engines": {
+    "iojs": "2.0.1"
+  },
+  "author": "JS Belgrade",
   "license": "ISC",
   "dependencies": {
     "koa": "^0.20.0",

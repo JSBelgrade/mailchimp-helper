@@ -6,6 +6,8 @@ Handles subscription to MailChimp because their JS API sucks
 ### Prerequests
 
 1. io.js or node.js with `--harmony` flag
+2. `MAILCHIMP_API_KEY`, `NODESCHOOL_LIST_ID` and `NODESCHOOL_MENTOR_LIST_ID` in 
+process env variables.
 
 ### Steps
 
