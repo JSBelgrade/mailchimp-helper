@@ -1,6 +1,6 @@
 'use strict';
 
-const mailchimp = require('./modules/mailchimp/subscribe')
+const mailchimp = require('_/mailchimp/subscribe')
 const koa       = require('koa')
 const route     = require('koa-route')
 const cors      = require('koa-cors')

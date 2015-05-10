@@ -1,7 +1,7 @@
 'use strict';
 
 const request = require('request')
-const generatorify = require('../generatorify/index')
+const generatorify = require('_/generatorify/index')
 
 const ApiKey = process.env.MAILCHIMP_API_KEY
 
